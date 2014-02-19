@@ -84,7 +84,7 @@ public class ControleTotal implements Serializable {
     public void controlaJogadas(String jog) throws ClassNotFoundException {
         //CONTROLA JOGADAS TEXTUAIS
         if (jog.equals("salvar") || jog.equals("SALVAR")) {
-            Partida partidaAtual = new Partida(this.tabuleiro, nomeJogador[0], jogador.retornaPontos(nomeJogador[0]), nomeJogador[1], jogador.retornaPontos(nomeJogador[1]), vezBranco);
+            Partida partidaAtual = new Partida(nomeJogador[0], jogador.retornaPontos(nomeJogador[0]), nomeJogador[1], jogador.retornaPontos(nomeJogador[1]), vezBranco,tabuleiro);
             salvarPartida(partidaAtual);
             if (textual == true) {
                 scanner.nextLine();
@@ -218,7 +218,7 @@ public class ControleTotal implements Serializable {
         if (textual == true) {
             impresso.Impressao(tabuleiro);
             view.imprimeVez(vezBranco);
-            
+
             if ((!nomeJogador[1].equals("AZUREUS")) || (vezBranco)) {
                 processaJogada(nomeJogador[0], nomeJogador[1]);
             } else {
@@ -265,36 +265,40 @@ public class ControleTotal implements Serializable {
                     processaModoJogo(comando);
                     break;
                 case "2":
-                    int contador = 1;
+                    int contador = 0;
                     partidas = dados.loadPartida();
                     view.imprimeEscolhaPartida();
                     for (Partida p : partidas) {
+                        contador++;
                         view.imprimeDadosPartida(contador, p);
-                        contador++;
                     }
-                    int opcao = scanner.nextInt();
-                    contador = 1;
-                    System.out.println(tabuleiro);
-                    impresso.Impressao(tabuleiro);
-                    //Problema esta no tabuleiro que foi salvo.
-                    for (Partida p : partidas) {
-                        if (contador == opcao) {
-                            this.tabuleiro = p.getTabuleiro();
-                            vezBranco = p.isVezBranco();
-                            System.out.println(tabuleiro);
-                            nomeJogador[0] = p.getJogadorBranco();
-                            System.out.println(nomeJogador[0]);
-                            nomeJogador[1] = p.getJogadorPreto();
-                            System.out.println(nomeJogador[1]);
-                            jogador.setPontuacaoJogador(nomeJogador[0],p.retornaArrayPontos("b"));
-                            jogador.setPontuacaoJogador(nomeJogador[1],p.retornaArrayPontos("p"));
-                            
-                            System.out.println("Pontuação"+""+p.retornaArrayPontos("p"));
+
+                    if (contador != 0) {
+                        int opcao = scanner.nextInt();
+                        if (opcao <= contador) {
+                            contador = 1;
+                        } else {
+                            view.opcaoInvalida();
+                            iniciaMenu();
                         }
-                        contador++;
+                        //Problema esta no tabuleiro que foi salvo.
+                        for (Partida p : partidas) {
+                            if (contador == opcao) {
+                                tabuleiro = p.getTabuleiro();
+                                vezBranco = p.isVezBranco();
+                                nomeJogador[0] = p.getJogadorBranco();
+                                nomeJogador[1] = p.getJogadorPreto();
+                                jogador.setPontuacaoJogador(nomeJogador[0], p.retornaArrayPontos("b"));
+                                jogador.setPontuacaoJogador(nomeJogador[1], p.retornaArrayPontos("p"));
+                           
+                            }
+                            contador++;
+                        }
+                    } else {
+                        view.naoExistemSalvas();
+                        iniciaMenu();
                     }
-                    
-                    //iniciaJogada();
+                    iniciaJogada();
                     break;
                 case "3":
                     impresso.imprimeDados(jogador.getJogadores());

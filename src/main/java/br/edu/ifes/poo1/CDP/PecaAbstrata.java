@@ -8,12 +8,13 @@ package br.edu.ifes.poo1.CDP;
 
 import br.edu.ifes.poo1.util.Cor;
 import br.edu.ifes.poo1.util.PecaNome;
+import java.io.Serializable;
 
 /**
  *
  * @author Henrique
  */
-public abstract class PecaAbstrata implements Peca{
+public abstract class PecaAbstrata implements Peca,Serializable{
     protected Cor cor;
     protected PecaNome nome;
     public boolean movimentado;

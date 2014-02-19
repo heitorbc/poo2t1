@@ -5,6 +5,7 @@
  */
 package br.edu.ifes.poo1.CDP;
 
+import br.edu.ifes.poo1.CIH.Impressao;
 import java.io.Serializable;
 import java.util.ArrayList;
 /**
@@ -13,20 +14,21 @@ import java.util.ArrayList;
  */
 public class Partida implements Serializable {
 
-    private Tabuleiro tabuleiro;
     private String jogadorBranco, jogadorPreto;
     private String pBranco, pPreto;
     private boolean vezBranco;
     private String dataHoraPartida;
+    private Tabuleiro tabuleiro;
 
-    public Partida(Tabuleiro tabuleiroEntrada, String jog1, String pon1, String jog2, String pon2, boolean vez) {
+    public Partida(String jog1, String pon1, String jog2, String pon2, boolean vez,Tabuleiro tabEntrada) {
 
-        this.tabuleiro = tabuleiroEntrada;
-        this.jogadorBranco = jog1;
-        this.jogadorPreto = jog2;
-        this.pBranco = pon1;
-        this.pPreto = pon2;
-        this.vezBranco = vez;
+        
+        jogadorBranco = jog1;
+        jogadorPreto = jog2;
+        pBranco = pon1;
+        pPreto = pon2;
+        vezBranco = vez;
+        tabuleiro = tabEntrada;
 
     }
 

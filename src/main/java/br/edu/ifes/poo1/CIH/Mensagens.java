@@ -104,6 +104,10 @@ public class Mensagens implements Serializable {
     public void imprimeDadosPartida(int contador, Partida p) {
         System.out.println(contador+" - "+p.getDataHoraPartida()+" | "+p.retornaNomesJodadores());
     }
+
+    public void naoExistemSalvas() {
+        System.out.println("\n\n##### ERRO ####: Não existem partidas salvas"); 
+   }
     
     
 }

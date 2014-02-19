@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package br.edu.ifes.poo1.CGD;
+import br.edu.ifes.poo1.CIH.Impressao;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
