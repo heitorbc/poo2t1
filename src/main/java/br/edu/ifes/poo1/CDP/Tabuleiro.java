@@ -45,6 +45,7 @@ public class Tabuleiro implements Serializable{
             case '1':
                 if (vezBranco == true) {
                     tabuleiro.put(posicao, new Dama(Cor.BRANCO));
+                    
                 } else {
                     tabuleiro.put(posicao, new Dama(Cor.PRETO));
                 }

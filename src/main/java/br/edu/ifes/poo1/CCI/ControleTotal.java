@@ -32,17 +32,19 @@ public class ControleTotal implements Serializable {
     private Impressao impresso = new Impressao();
     private Scanner scanner = new Scanner(System.in);
     private String[] nomeJogador = new String[2];
-    private Mensagens view = new Mensagens();
+    private Mensagens view ;
     private Azureus az = new Azureus();
     private Dados dados = new Dados();
     private ArrayList<Partida> partidas = new ArrayList<>();
     private boolean vezBranco = true;
     private boolean textual = true;
-    private Movimentacao move = new Movimentacao(this, impresso, view, tela);
+    private Movimentacao move ;
 
     //Construtor do Controle Total
     public ControleTotal(Tabuleiro tab) {
-        tela = new Visual(tab, this);
+        tela = new Visual(tab, this,jogador);
+        view = new Mensagens();
+        move = new Movimentacao(this, impresso, view, tela);
         this.tabuleiro = tab;
         tela.setVisible(false);
     }
@@ -181,6 +183,8 @@ public class ControleTotal implements Serializable {
                 if (textual == true) {
                     view.movimentoInvalido();
                     processaJogada(nomeJogador[0], nomeJogador[1]);
+                }else{
+                    tela.alertaMovInvalido();
                 }
             }
         }

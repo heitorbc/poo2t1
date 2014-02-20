@@ -6,6 +6,8 @@
 package br.edu.ifes.poo1.CIH;
 
 import br.edu.ifes.poo1.CCI.ControleTotal;
+import br.edu.ifes.poo1.CDP.Jogador;
+import br.edu.ifes.poo1.CDP.Partida;
 import br.edu.ifes.poo1.CDP.Tabuleiro;
 import br.edu.ifes.poo1.util.Cor;
 import br.edu.ifes.poo1.util.PecaNome;
@@ -19,6 +21,7 @@ import java.util.logging.Logger;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
+import javax.swing.ScrollPaneConstants;
 
 /**
  *
@@ -44,19 +47,24 @@ public class Visual extends javax.swing.JFrame {
     Image pb = this.getToolkit().createImage(caminho + "peaobranco.png");
     int opcao;
 
-    Tabuleiro tabuleiro = null;
-    ControleTotal control = null;
+    Tabuleiro tabuleiro;
+    ControleTotal control;
+    Jogador jogador;
+    Promocao promocao;
 
-    public Visual(Tabuleiro tabuleiro, ControleTotal control) {
-
+    public Visual(Tabuleiro tabuleiro, ControleTotal control, Jogador jogador) {
         initComponents();
+        promocao = new Promocao(this);
+        promocao.setVisible(false);
         this.tabuleiro = tabuleiro;
         this.control = control;
+        this.jogador = jogador;
         lbl_digitecomando.setEnabled(false);
         btn_jogada.setVisible(false);
         btn_jogada.setEnabled(false);
+        btn_salvar.setEnabled(false);
         control.setTextual(false);
-
+        
     }
 
     /**
@@ -242,6 +250,7 @@ public class Visual extends javax.swing.JFrame {
         jLabel63 = new javax.swing.JLabel();
         jLabel64 = new javax.swing.JLabel();
         jLabel65 = new javax.swing.JLabel();
+        jPanel4 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
         setTitle("Xadrez - POO1");
@@ -1189,14 +1198,14 @@ public class Visual extends javax.swing.JFrame {
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 73, 617, 639));
 
-        btn_novo.setText("NOVO");
+        btn_novo.setText("Novo Jogo");
         btn_novo.setFocusable(false);
         btn_novo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_novoActionPerformed(evt);
             }
         });
-        getContentPane().add(btn_novo, new org.netbeans.lib.awtextra.AbsoluteConstraints(656, 656, -1, -1));
+        getContentPane().add(btn_novo, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 320, 100, -1));
 
         jPanel2.setBackground(new java.awt.Color(51, 153, 255));
 
@@ -1232,12 +1241,12 @@ public class Visual extends javax.swing.JFrame {
                     .addComponent(lbl_jogada)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(lbl_digitecomando)
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                        .addGap(0, 75, Short.MAX_VALUE)))
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(65, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(btn_jogada)
-                .addGap(49, 49, 49))
+                .addGap(56, 56, 56))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1246,9 +1255,9 @@ public class Visual extends javax.swing.JFrame {
                 .addComponent(lbl_digitecomando)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(lbl_jogada, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 11, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btn_jogada)
-                .addContainerGap())
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(656, 195, 223, -1));
@@ -1311,15 +1320,15 @@ public class Visual extends javax.swing.JFrame {
                 btn_sairActionPerformed(evt);
             }
         });
-        getContentPane().add(btn_sair, new org.netbeans.lib.awtextra.AbsoluteConstraints(828, 656, -1, -1));
+        getContentPane().add(btn_sair, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 650, 100, -1));
 
-        btn_salvar.setText("Salvar");
+        btn_salvar.setText("Salvar Jogo");
         btn_salvar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_salvarActionPerformed(evt);
             }
         });
-        getContentPane().add(btn_salvar, new org.netbeans.lib.awtextra.AbsoluteConstraints(735, 656, -1, -1));
+        getContentPane().add(btn_salvar, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 320, 110, -1));
 
         lbl_title.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
         lbl_title.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -1742,15 +1751,31 @@ public class Visual extends javax.swing.JFrame {
         jLabel65.setOpaque(true);
         getContentPane().add(jLabel65, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 370, 30, 30));
 
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 900, Short.MAX_VALUE)
+        );
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 750, Short.MAX_VALUE)
+        );
+
+        getContentPane().add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 900, 750));
+
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btn_novoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_novoActionPerformed
+        
         iniciandoTabuleiro();
         lbl_digitecomando.setEnabled(true);
         btn_jogada.setEnabled(true);
         btn_jogada.setVisible(true);
+        btn_salvar.setEnabled(true);
+        btn_novo.setVisible(false);
 
     }//GEN-LAST:event_btn_novoActionPerformed
 
@@ -1766,7 +1791,6 @@ public class Visual extends javax.swing.JFrame {
             } catch (ClassNotFoundException ex) {
                 Logger.getLogger(Visual.class.getName()).log(Level.SEVERE, null, ex);
             }
-
             atualizaTabuleiro();
         } else {
             switch (jogada) {
@@ -1821,7 +1845,7 @@ public class Visual extends javax.swing.JFrame {
                             } catch (ClassNotFoundException ex) {
                                 Logger.getLogger(Visual.class.getName()).log(Level.SEVERE, null, ex);
                             }
-                            
+
                         } else {
                             control.alteraVez();
                             atualizaTabuleiro();
@@ -1837,7 +1861,20 @@ public class Visual extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_jogadaActionPerformed
 
     private void btn_salvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_salvarActionPerformed
-        // TODO add your handling code here:
+        int opcao = JOptionPane.showConfirmDialog(null, "Ao sair sem salvar os dados \n da partida serão perdidos!!\n"
+                + "Tente Propor um empate ou desista!\n "
+                + "Deseja Sair mesmo assim???", "ATENÇÃO", JOptionPane.YES_NO_OPTION);
+
+        if (opcao == 0) {
+            Partida partidaAtual = new Partida(control.getNomeJogadorBranco(), jogador.retornaPontos(control.getNomeJogadorBranco()), control.getNomeJogadorPreto(), jogador.retornaPontos(control.getNomeJogadorPreto()), control.isVezBranco(), tabuleiro);
+            fechaTela();
+            try {
+                control.salvarPartida(partidaAtual);
+                control.iniciaMenu();
+            } catch (ClassNotFoundException ex) {
+                Logger.getLogger(Visual.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
     }//GEN-LAST:event_btn_salvarActionPerformed
 
     private void btn_sairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_sairActionPerformed
@@ -2267,6 +2304,7 @@ public class Visual extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
     private javax.swing.JLabel lbl_11;
     private javax.swing.JLabel lbl_12;
     private javax.swing.JLabel lbl_13;
@@ -5387,4 +5425,12 @@ public class Visual extends javax.swing.JFrame {
 
     }
 
+    public void exibePromocao(String posicao){
+        
+        promocao.atualizaPromocao(tabuleiro, posicao, control.isVezBranco());
+        promocao.setVisible(true);
+        
+        
+        
+    }
 }//fimVISUAL
