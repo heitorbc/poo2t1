@@ -1794,8 +1794,8 @@ public class Visual extends javax.swing.JFrame {
                     control.alteraVez();
                     atualizaTabuleiro();
                     if (control.isVezBranco()) {
-                        opcao = JOptionPane.showConfirmDialog(null, "##EMPATE##\n" + control.nomeJogador[0] + " deseja Aceitar o"
-                                + "\nempate proposto por " + control.nomeJogador[1], "ATENÇÃO", JOptionPane.YES_NO_OPTION);
+                        opcao = JOptionPane.showConfirmDialog(null, "##EMPATE##\n" + control.getNomeJogadorBranco() + " deseja Aceitar o"
+                                + "\nempate proposto por " + control.getNomeJogadorPreto(), "ATENÇÃO", JOptionPane.YES_NO_OPTION);
                         if (opcao == 0) {
                             fechaTela();
                             try {
@@ -1811,8 +1811,8 @@ public class Visual extends javax.swing.JFrame {
                         }
 
                     } else {
-                        opcao = JOptionPane.showConfirmDialog(null, "##EMPATE##\n" + control.nomeJogador[1] + " deseja Aceitar o"
-                                + "\nempate proposto por " + control.nomeJogador[0], "ATENÇÃO", JOptionPane.YES_NO_OPTION);
+                        opcao = JOptionPane.showConfirmDialog(null, "##EMPATE##\n" + control.getNomeJogadorPreto() + " deseja Aceitar o"
+                                + "\nempate proposto por " + control.getNomeJogadorBranco(), "ATENÇÃO", JOptionPane.YES_NO_OPTION);
                         if (opcao == 0) {
                             fechaTela();
                             try {
@@ -1857,258 +1857,322 @@ public class Visual extends javax.swing.JFrame {
 
     private void lbl_11MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_11MouseClicked
         lbl_jogada.setText(lbl_jogada.getText() + "11");
+        lbl_jogada.requestFocus();
     }//GEN-LAST:event_lbl_11MouseClicked
 
     private void lbl_21MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_21MouseClicked
         lbl_jogada.setText(lbl_jogada.getText() + "21");
+        lbl_jogada.requestFocus();
     }//GEN-LAST:event_lbl_21MouseClicked
 
     private void lbl_31MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_31MouseClicked
         lbl_jogada.setText(lbl_jogada.getText() + "31");
+        lbl_jogada.requestFocus();
     }//GEN-LAST:event_lbl_31MouseClicked
 
     private void lbl_41MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_41MouseClicked
         lbl_jogada.setText(lbl_jogada.getText() + "41");
+        lbl_jogada.requestFocus();
     }//GEN-LAST:event_lbl_41MouseClicked
 
     private void lbl_51MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_51MouseClicked
         lbl_jogada.setText(lbl_jogada.getText() + "51");
+        lbl_jogada.requestFocus();
     }//GEN-LAST:event_lbl_51MouseClicked
 
     private void lbl_61MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_61MouseClicked
         lbl_jogada.setText(lbl_jogada.getText() + "61");
+        lbl_jogada.requestFocus();
     }//GEN-LAST:event_lbl_61MouseClicked
 
     private void lbl_71MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_71MouseClicked
         lbl_jogada.setText(lbl_jogada.getText() + "71");
+        lbl_jogada.requestFocus();
     }//GEN-LAST:event_lbl_71MouseClicked
 
     private void lbl_81MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_81MouseClicked
         lbl_jogada.setText(lbl_jogada.getText() + "81");
+        lbl_jogada.requestFocus();
     }//GEN-LAST:event_lbl_81MouseClicked
 
     private void lbl_12MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_12MouseClicked
         lbl_jogada.setText(lbl_jogada.getText() + "12");
+        lbl_jogada.requestFocus();
     }//GEN-LAST:event_lbl_12MouseClicked
 
     private void lbl_22MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_22MouseClicked
         lbl_jogada.setText(lbl_jogada.getText() + "22");
+        lbl_jogada.requestFocus();
     }//GEN-LAST:event_lbl_22MouseClicked
 
     private void lbl_32MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_32MouseClicked
         lbl_jogada.setText(lbl_jogada.getText() + "32");
+        lbl_jogada.requestFocus();
     }//GEN-LAST:event_lbl_32MouseClicked
 
     private void lbl_42MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_42MouseClicked
         lbl_jogada.setText(lbl_jogada.getText() + "42");
+        lbl_jogada.requestFocus();
     }//GEN-LAST:event_lbl_42MouseClicked
 
     private void lbl_52MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_52MouseClicked
         lbl_jogada.setText(lbl_jogada.getText() + "52");
+        lbl_jogada.requestFocus();
     }//GEN-LAST:event_lbl_52MouseClicked
 
     private void lbl_62MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_62MouseClicked
         lbl_jogada.setText(lbl_jogada.getText() + "62");
+        lbl_jogada.requestFocus();
     }//GEN-LAST:event_lbl_62MouseClicked
 
     private void lbl_72MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_72MouseClicked
         lbl_jogada.setText(lbl_jogada.getText() + "72");
+        lbl_jogada.requestFocus();
     }//GEN-LAST:event_lbl_72MouseClicked
 
     private void lbl_82MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_82MouseClicked
         lbl_jogada.setText(lbl_jogada.getText() + "82");
+        lbl_jogada.requestFocus();
     }//GEN-LAST:event_lbl_82MouseClicked
 
     private void lbl_13MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_13MouseClicked
         lbl_jogada.setText(lbl_jogada.getText() + "13");
+        lbl_jogada.requestFocus();
     }//GEN-LAST:event_lbl_13MouseClicked
 
     private void lbl_23MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_23MouseClicked
         lbl_jogada.setText(lbl_jogada.getText() + "23");
+        lbl_jogada.requestFocus();
     }//GEN-LAST:event_lbl_23MouseClicked
 
     private void lbl_33MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_33MouseClicked
         lbl_jogada.setText(lbl_jogada.getText() + "33");
+        lbl_jogada.requestFocus();
     }//GEN-LAST:event_lbl_33MouseClicked
 
     private void lbl_43MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_43MouseClicked
         lbl_jogada.setText(lbl_jogada.getText() + "43");
+        lbl_jogada.requestFocus();
     }//GEN-LAST:event_lbl_43MouseClicked
 
     private void lbl_53MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_53MouseClicked
         lbl_jogada.setText(lbl_jogada.getText() + "53");
+        lbl_jogada.requestFocus();
     }//GEN-LAST:event_lbl_53MouseClicked
 
     private void lbl_63MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_63MouseClicked
         lbl_jogada.setText(lbl_jogada.getText() + "63");
+        lbl_jogada.requestFocus();
     }//GEN-LAST:event_lbl_63MouseClicked
 
     private void lbl_73MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_73MouseClicked
         lbl_jogada.setText(lbl_jogada.getText() + "73");
+        lbl_jogada.requestFocus();
     }//GEN-LAST:event_lbl_73MouseClicked
 
     private void lbl_83MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_83MouseClicked
         lbl_jogada.setText(lbl_jogada.getText() + "83");
+        lbl_jogada.requestFocus();
     }//GEN-LAST:event_lbl_83MouseClicked
 
     private void lbl_14MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_14MouseClicked
         lbl_jogada.setText(lbl_jogada.getText() + "14");
+        lbl_jogada.requestFocus();
     }//GEN-LAST:event_lbl_14MouseClicked
 
     private void lbl_24MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_24MouseClicked
         lbl_jogada.setText(lbl_jogada.getText() + "24");
+        lbl_jogada.requestFocus();
     }//GEN-LAST:event_lbl_24MouseClicked
 
     private void lbl_34MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_34MouseClicked
         lbl_jogada.setText(lbl_jogada.getText() + "34");
+        lbl_jogada.requestFocus();
     }//GEN-LAST:event_lbl_34MouseClicked
 
     private void lbl_44MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_44MouseClicked
         lbl_jogada.setText(lbl_jogada.getText() + "44");
+        lbl_jogada.requestFocus();
     }//GEN-LAST:event_lbl_44MouseClicked
 
     private void lbl_54MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_54MouseClicked
         lbl_jogada.setText(lbl_jogada.getText() + "54");
+        lbl_jogada.requestFocus();
     }//GEN-LAST:event_lbl_54MouseClicked
 
     private void lbl_64MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_64MouseClicked
         lbl_jogada.setText(lbl_jogada.getText() + "64");
+        lbl_jogada.requestFocus();
     }//GEN-LAST:event_lbl_64MouseClicked
 
     private void lbl_74MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_74MouseClicked
         lbl_jogada.setText(lbl_jogada.getText() + "74");
+        lbl_jogada.requestFocus();
     }//GEN-LAST:event_lbl_74MouseClicked
 
     private void lbl_84MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_84MouseClicked
         lbl_jogada.setText(lbl_jogada.getText() + "84");
+        lbl_jogada.requestFocus();
     }//GEN-LAST:event_lbl_84MouseClicked
 
     private void lbl_15MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_15MouseClicked
         lbl_jogada.setText(lbl_jogada.getText() + "15");
+        lbl_jogada.requestFocus();
     }//GEN-LAST:event_lbl_15MouseClicked
 
     private void lbl_25MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_25MouseClicked
         lbl_jogada.setText(lbl_jogada.getText() + "25");
+        lbl_jogada.requestFocus();
     }//GEN-LAST:event_lbl_25MouseClicked
 
     private void lbl_35MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_35MouseClicked
         lbl_jogada.setText(lbl_jogada.getText() + "35");
+        lbl_jogada.requestFocus();
     }//GEN-LAST:event_lbl_35MouseClicked
 
     private void lbl_45MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_45MouseClicked
         lbl_jogada.setText(lbl_jogada.getText() + "45");
+        lbl_jogada.requestFocus();
     }//GEN-LAST:event_lbl_45MouseClicked
 
     private void lbl_55MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_55MouseClicked
         lbl_jogada.setText(lbl_jogada.getText() + "55");
+        lbl_jogada.requestFocus();
     }//GEN-LAST:event_lbl_55MouseClicked
 
     private void lbl_65MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_65MouseClicked
         lbl_jogada.setText(lbl_jogada.getText() + "65");
+        lbl_jogada.requestFocus();
     }//GEN-LAST:event_lbl_65MouseClicked
 
     private void lbl_75MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_75MouseClicked
         lbl_jogada.setText(lbl_jogada.getText() + "75");
+        lbl_jogada.requestFocus();
     }//GEN-LAST:event_lbl_75MouseClicked
 
     private void lbl_85MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_85MouseClicked
         lbl_jogada.setText(lbl_jogada.getText() + "85");
+        lbl_jogada.requestFocus();
     }//GEN-LAST:event_lbl_85MouseClicked
 
     private void lbl_16MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_16MouseClicked
         lbl_jogada.setText(lbl_jogada.getText() + "16");
+        lbl_jogada.requestFocus();
     }//GEN-LAST:event_lbl_16MouseClicked
 
     private void lbl_26MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_26MouseClicked
         lbl_jogada.setText(lbl_jogada.getText() + "26");
+        lbl_jogada.requestFocus();
     }//GEN-LAST:event_lbl_26MouseClicked
 
     private void lbl_36MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_36MouseClicked
         lbl_jogada.setText(lbl_jogada.getText() + "36");
+        lbl_jogada.requestFocus();
     }//GEN-LAST:event_lbl_36MouseClicked
 
     private void lbl_46MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_46MouseClicked
         lbl_jogada.setText(lbl_jogada.getText() + "46");
+        lbl_jogada.requestFocus();
     }//GEN-LAST:event_lbl_46MouseClicked
 
     private void lbl_56MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_56MouseClicked
         lbl_jogada.setText(lbl_jogada.getText() + "56");
+        lbl_jogada.requestFocus();
     }//GEN-LAST:event_lbl_56MouseClicked
 
     private void lbl_66MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_66MouseClicked
         lbl_jogada.setText(lbl_jogada.getText() + "66");
+        lbl_jogada.requestFocus();
     }//GEN-LAST:event_lbl_66MouseClicked
 
     private void lbl_76MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_76MouseClicked
         lbl_jogada.setText(lbl_jogada.getText() + "76");
+        lbl_jogada.requestFocus();
     }//GEN-LAST:event_lbl_76MouseClicked
 
     private void lbl_86MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_86MouseClicked
         lbl_jogada.setText(lbl_jogada.getText() + "86");
+        lbl_jogada.requestFocus();
     }//GEN-LAST:event_lbl_86MouseClicked
 
     private void lbl_17MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_17MouseClicked
         lbl_jogada.setText(lbl_jogada.getText() + "17");
+        lbl_jogada.requestFocus();
     }//GEN-LAST:event_lbl_17MouseClicked
 
     private void lbl_27MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_27MouseClicked
         lbl_jogada.setText(lbl_jogada.getText() + "27");
+        lbl_jogada.requestFocus();
     }//GEN-LAST:event_lbl_27MouseClicked
 
     private void lbl_37MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_37MouseClicked
         lbl_jogada.setText(lbl_jogada.getText() + "37");
+        lbl_jogada.requestFocus();
     }//GEN-LAST:event_lbl_37MouseClicked
 
     private void lbl_47MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_47MouseClicked
         lbl_jogada.setText(lbl_jogada.getText() + "47");
+        lbl_jogada.requestFocus();
     }//GEN-LAST:event_lbl_47MouseClicked
 
     private void lbl_57MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_57MouseClicked
         lbl_jogada.setText(lbl_jogada.getText() + "57");
+        lbl_jogada.requestFocus();
     }//GEN-LAST:event_lbl_57MouseClicked
 
     private void lbl_67MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_67MouseClicked
         lbl_jogada.setText(lbl_jogada.getText() + "67");
+        lbl_jogada.requestFocus();
     }//GEN-LAST:event_lbl_67MouseClicked
 
     private void lbl_77MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_77MouseClicked
         lbl_jogada.setText(lbl_jogada.getText() + "77");
+        lbl_jogada.requestFocus();
     }//GEN-LAST:event_lbl_77MouseClicked
 
     private void lbl_87MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_87MouseClicked
         lbl_jogada.setText(lbl_jogada.getText() + "87");
+        lbl_jogada.requestFocus();
     }//GEN-LAST:event_lbl_87MouseClicked
 
     private void lbl_18MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_18MouseClicked
         lbl_jogada.setText(lbl_jogada.getText() + "18");
+        lbl_jogada.requestFocus();
     }//GEN-LAST:event_lbl_18MouseClicked
 
     private void lbl_28MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_28MouseClicked
         lbl_jogada.setText(lbl_jogada.getText() + "28");
+        lbl_jogada.requestFocus();
     }//GEN-LAST:event_lbl_28MouseClicked
 
     private void lbl_38MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_38MouseClicked
         lbl_jogada.setText(lbl_jogada.getText() + "38");
+        lbl_jogada.requestFocus();
     }//GEN-LAST:event_lbl_38MouseClicked
 
     private void lbl_48MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_48MouseClicked
         lbl_jogada.setText(lbl_jogada.getText() + "48");
+        lbl_jogada.requestFocus();
     }//GEN-LAST:event_lbl_48MouseClicked
 
     private void lbl_58MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_58MouseClicked
         lbl_jogada.setText(lbl_jogada.getText() + "58");
+        lbl_jogada.requestFocus();
     }//GEN-LAST:event_lbl_58MouseClicked
 
     private void lbl_68MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_68MouseClicked
         lbl_jogada.setText(lbl_jogada.getText() + "68");
+        lbl_jogada.requestFocus();
     }//GEN-LAST:event_lbl_68MouseClicked
 
     private void lbl_78MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_78MouseClicked
         lbl_jogada.setText(lbl_jogada.getText() + "78");
+        lbl_jogada.requestFocus();
     }//GEN-LAST:event_lbl_78MouseClicked
 
     private void lbl_88MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_88MouseClicked
         lbl_jogada.setText(lbl_jogada.getText() + "88");
+        lbl_jogada.requestFocus();
     }//GEN-LAST:event_lbl_88MouseClicked
 
     private void formKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_formKeyPressed
@@ -2311,16 +2375,12 @@ public class Visual extends javax.swing.JFrame {
         lbl_jogador1.setText(JOptionPane.showInputDialog(null, "Digite nome do Jogador 1:", "jogador BRANCAS").toUpperCase());
         lbl_jogador2.setText(JOptionPane.showInputDialog(null, "Digite nome do Jogador 2:", "jogador PRETAS").toUpperCase());
         control.processaJogadorVisual(lbl_jogador1.getText(), lbl_jogador2.getText());
-
         retiraNomeLbl();
         atualizaTabuleiro();
-
-        //JOptionPane.showMessageDialog(null, "Mensagem", "Titulo", 1);  
     }
 
     public void atualizaTabuleiro() {
         //alterando as labels linha a linha
-
         alteralbl1();
         alteralbl2();
         alteralbl3();
@@ -2453,7 +2513,7 @@ public class Visual extends javax.swing.JFrame {
     }
 
     private void atualizaVez() {
-        if (control.retornaVezBranco()) {
+        if (control.isVezBranco()) {
             lbl_vez.setText("VEZ BRANCAS");
         } else {
             lbl_vez.setText("VEZ PRETAS");

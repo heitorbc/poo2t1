@@ -6,6 +6,7 @@
 package br.edu.ifes.poo1.CDP;
 
 import br.edu.ifes.poo1.CCI.ControleTotal;
+import br.edu.ifes.poo1.CGT.Movimentacao;
 import java.io.Serializable;
 import java.util.Random;
 
@@ -23,7 +24,7 @@ public class Azureus implements Serializable {
     private int numAux;
     private boolean jogadaValida;
 
-    public String processaJogadaAzureus(Tabuleiro tabuleiro, ControleTotal control) {
+    public String processaJogadaAzureus(Tabuleiro tabuleiro, ControleTotal control, Movimentacao move) {
         jogadaValida = false;
         while (!jogadaValida) {
             posAtual = geraPos();
@@ -33,7 +34,7 @@ public class Azureus implements Serializable {
                         posProx = geraPos();
                         if (tabuleiro.retornaPeca(posProx) == null) {//posição PROX = VAZIO
                             //testa movimento
-                            if ((tabuleiro.retornaPeca(posAtual).podeAndarQuanto(posAtual, posProx))&&(control.caminhoLivre(posAtual, posProx, tabuleiro.retornaPeca("" + posAtual.charAt(0) + posAtual.charAt(1)).getNome().getApelidoPeca().toString(), tabuleiro.retornaPeca("" + posAtual.charAt(0) + posAtual.charAt(1)).getCor().toString()))) {
+                            if ((tabuleiro.retornaPeca(posAtual).podeAndarQuanto(posAtual, posProx))&&(move.caminhoLivre(posAtual, posProx, tabuleiro.retornaPeca("" + posAtual.charAt(0) + posAtual.charAt(1)).getNome().getApelidoPeca().toString(), tabuleiro.retornaPeca("" + posAtual.charAt(0) + posAtual.charAt(1)).getCor().toString(),tabuleiro))) {
                                 return posAtual + posProx;
                                 
                             }
