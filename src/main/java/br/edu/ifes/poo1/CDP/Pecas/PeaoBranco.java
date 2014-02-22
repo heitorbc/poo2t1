@@ -9,6 +9,8 @@ import br.edu.ifes.poo1.util.Cor;
 import br.edu.ifes.poo1.util.PecaNome;
 import java.io.Serializable;
 
+
+
 /**
  *
  * @author 20121BSI0082
