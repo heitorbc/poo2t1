@@ -694,7 +694,8 @@ public class Movimentacao implements Serializable{
         if ((control.isVezBranco()) && (tabuleiro.retornaPeca("51") != null)) {
             //roqueMaiorBranco
             if (tabuleiro.retornaPeca("11") != null) {
-                if (entrada.equals("O-O-O") && (!tabuleiro.retornaPeca("51").getMovimentado()) && ((!tabuleiro.retornaPeca("11").getMovimentado())) && (tabuleiro.retornaPeca("21") == null) && (tabuleiro.retornaPeca("31") == null) && (tabuleiro.retornaPeca("41") == null)) {
+                if (entrada.equals("O-O-O") && (!tabuleiro.retornaPeca("51").getMovimentado()) && ((!tabuleiro.retornaPeca("11").getMovimentado())) 
+                        && (tabuleiro.retornaPeca("21") == null) && (tabuleiro.retornaPeca("31") == null) && (tabuleiro.retornaPeca("41") == null)) {
                     //trocandoREi
                     tabuleiro.trocaPeca("51", "31");
                     //trocandoTorre
@@ -703,7 +704,8 @@ public class Movimentacao implements Serializable{
                 }
             }  //roqueMenorBranco
             if (tabuleiro.retornaPeca("81") != null) {
-                if (entrada.equals("O-O") && (!tabuleiro.retornaPeca("51").getMovimentado()) && ((!tabuleiro.retornaPeca("81").getMovimentado())) && (tabuleiro.retornaPeca("61") == null) && (tabuleiro.retornaPeca("71") == null)) {
+                if (entrada.equals("O-O") && (!tabuleiro.retornaPeca("51").getMovimentado()) && ((!tabuleiro.retornaPeca("81").getMovimentado())) 
+                        && (tabuleiro.retornaPeca("61") == null) && (tabuleiro.retornaPeca("71") == null)) {
                     //trocandoREi
                     tabuleiro.trocaPeca("51", "71");
                     //trocandoTorre
@@ -715,7 +717,8 @@ public class Movimentacao implements Serializable{
         } else if (tabuleiro.retornaPeca("58") != null) {
             //roqueMaiorPreto
             if (tabuleiro.retornaPeca("18") != null) {
-                if (entrada.equals("O-O-O") && (!tabuleiro.retornaPeca("58").getMovimentado()) && ((!tabuleiro.retornaPeca("18").getMovimentado())) && (tabuleiro.retornaPeca("28") == null) && (tabuleiro.retornaPeca("38") == null) && (tabuleiro.retornaPeca("48") == null)) {
+                if (entrada.equals("O-O-O") && (!tabuleiro.retornaPeca("58").getMovimentado()) && ((!tabuleiro.retornaPeca("18").getMovimentado())) 
+                        && (tabuleiro.retornaPeca("28") == null) && (tabuleiro.retornaPeca("38") == null) && (tabuleiro.retornaPeca("48") == null)) {
                     //trocandoREi
                     tabuleiro.trocaPeca("58", "38");
                     //trocandoTorre
@@ -724,7 +727,8 @@ public class Movimentacao implements Serializable{
                 }
             }//roqueMaiorBranco
             if (tabuleiro.retornaPeca("88") != null) {
-                if (entrada.equals("O-O") && (!tabuleiro.retornaPeca("58").getMovimentado()) && ((!tabuleiro.retornaPeca("88").getMovimentado())) && (tabuleiro.retornaPeca("68") == null) && (tabuleiro.retornaPeca("78") == null)) {
+                if (entrada.equals("O-O") && (!tabuleiro.retornaPeca("58").getMovimentado()) && ((!tabuleiro.retornaPeca("88").getMovimentado())) 
+                        && (tabuleiro.retornaPeca("68") == null) && (tabuleiro.retornaPeca("78") == null)) {
                     //trocandoREi
                     tabuleiro.trocaPeca("58", "78");
                     //trocandoTorre
