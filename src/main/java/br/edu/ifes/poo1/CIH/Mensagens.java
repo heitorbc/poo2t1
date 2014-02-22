@@ -38,21 +38,7 @@ public class Mensagens implements Serializable {
         
     }
     
-    public void opcaoInvalidaFim(){
-        System.out.println("Opção inválida, jogo encerrado!");
-    }
-    
-    public void opcaoInvalida(){
-        System.out.println("Opção Inválida");
-    }
-    
-    public void movimentoInvalido(){
-        System.out.println("***Erro*** Movimento Inválido");
-    }
-    
-    public void entradaInvalida(){
-        System.out.println("***Erro*** Entrada Inválido");
-    }
+
     public void nomeJogadorUm (){
         System.out.println("Nome Jogador 1:");
     }
@@ -74,10 +60,7 @@ public class Mensagens implements Serializable {
     public void movimentoCaptura(){
         System.out.println("Movimento para captura, use o x no meio.");
     }
-    
-    public void deuMerda(){
-        System.out.println("Deu merda foi para o ultimo retorno");
-    }
+
     
     public void imprimeVez(boolean vezBranco){
         if (vezBranco == true) {
@@ -106,8 +89,22 @@ public class Mensagens implements Serializable {
     }
 
     public void naoExistemSalvas() {
-        System.out.println("\n\n##### ERRO ####: Não existem partidas salvas"); 
+        System.err.println("\n\n##### ERRO ####: Não existem partidas salvas"); 
    }
     
+    public void opcaoInvalidaFim(){
+        System.err.println("Opção inválida, jogo encerrado!");
+    }
     
+    public void opcaoInvalida(){
+        System.err.println("Opção Inválida");
+    }
+    
+    public void movimentoInvalido(){
+        System.err.println("***Erro*** Movimento Inválido");
+    }
+    
+    public void entradaInvalida(){
+        System.err.println("***Erro*** Entrada Inválido");
+    }
 }

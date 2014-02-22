@@ -14,10 +14,6 @@ import java.io.Serializable;
  */
 public class Cavalo extends PecaAbstrata implements Serializable{ 
 
-    public Cavalo()
-    {
-        super();
-    }
     
     public Cavalo(Cor cor) {
         super(cor, PecaNome.CAVALO);

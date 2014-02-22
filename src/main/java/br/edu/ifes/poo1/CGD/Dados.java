@@ -13,7 +13,6 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
 import java.util.ArrayList;
-
 /**
  *
  * @author Henrique
@@ -28,7 +27,7 @@ public class Dados <T extends Serializable> {
             /*Tenta salvar os dados do usuario*/
             ArrayList<T> partidasCarregadas = loadPartida();
             partidasCarregadas.add(partida);
-            ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream("C:\\partidas.dat"));
+            ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream("D:\\partidas.dat"));
             out.writeObject(partidasCarregadas);
             out.close();
 
@@ -41,10 +40,10 @@ public class Dados <T extends Serializable> {
 
         try {
 
-            File testeArquivo = new File("C:\\partidas.dat");
+            File testeArquivo = new File("D:\\partidas.dat");
             if (testeArquivo.exists()) {
                 /*Se o arquivo existir ele faz o load*/
-                ObjectInputStream in = new ObjectInputStream(new FileInputStream("C:\\partidas.dat"));
+                ObjectInputStream in = new ObjectInputStream(new FileInputStream("D:\\partidas.dat"));
                 ArrayList<T> partidaReturn = (ArrayList<T>) in.readObject();
                 in.close();
                 return partidaReturn;

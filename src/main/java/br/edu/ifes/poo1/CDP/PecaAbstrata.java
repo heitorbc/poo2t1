@@ -19,9 +19,6 @@ public abstract class PecaAbstrata implements Peca,Serializable{
     protected PecaNome nome;
     public boolean movimentado;
 
-    public PecaAbstrata (){
-        
-    }
     
     public PecaAbstrata(Cor cor, PecaNome nome) {
         this.cor = cor;

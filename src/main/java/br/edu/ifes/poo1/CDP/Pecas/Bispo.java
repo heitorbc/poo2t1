@@ -21,12 +21,10 @@ public class Bispo extends PecaAbstrata implements Serializable{
 
     @Override   
     public boolean podeAndarQuanto(String posicaoAtual, String proximaPosicao) {
-        
+        //valor absoluto das coordenadas fossem iguais 
         return (Math.abs(posicaoAtual.charAt(0) - proximaPosicao.charAt(0)) == (Math.abs(posicaoAtual.charAt(1) - proximaPosicao.charAt(1))) &&
                 !posicaoAtual.equals(proximaPosicao));
-                
     }
-
     @Override
     public boolean podeCapturar(String posicaoAtual, String proximaPosicao) {
        

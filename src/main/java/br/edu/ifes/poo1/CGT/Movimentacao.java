@@ -13,6 +13,7 @@ import br.edu.ifes.poo1.CIH.Mensagens;
 import br.edu.ifes.poo1.CIH.Promocao;
 import br.edu.ifes.poo1.CIH.Visual;
 import br.edu.ifes.poo1.util.Cor;
+import java.io.Serializable;
 import java.util.Scanner;
 
 /**
@@ -20,7 +21,7 @@ import java.util.Scanner;
  * @author Henrique
  */
 //Classe que gerencia movminto das pecas
-public class Movimentacao {
+public class Movimentacao implements Serializable{
 
     private ControleTotal control;
     private Scanner scanner = new Scanner(System.in);
@@ -41,18 +42,16 @@ public class Movimentacao {
             String posDir = "" + (Integer.parseInt(posAtual.charAt(0) + "") + 1) + posAtual.charAt(1);
             String posEsq = "" + (Integer.parseInt(posAtual.charAt(0) + "") - 1) + posAtual.charAt(1);
             if (peca == " P " && tabuleiro.retornaPeca(posAtual).getCor() == Cor.BRANCO) {//PEAO Branco
-                if ((tabuleiro.retornaPeca(posAtual).podeCapturar(posAtual, posProx) == true) && (tabuleiro.retornaPeca(posProx) != null)) {
+                if ((tabuleiro.retornaPeca(posAtual).podeCapturar(posAtual, posProx) == true) && (tabuleiro.retornaPeca(posProx) != null) && ( tabuleiro.retornaPeca(posAtual).getCor() !=  tabuleiro.retornaPeca(posProx).getCor())) {
                     tabuleiro.trocaPeca(posAtual, posProx);
                     //verificaPromocaoparaPEAOpreto
                     if (posProx.charAt(1) == '8') {
                         if (control.isTextual() == true) {
-                            scanner.nextLine();
                             impresso.imprimePromocao();
                             opcao = scanner.nextLine();
                             tabuleiro.promovePeca(opcao.charAt(0), posProx, control.isVezBranco());
                         } else {
                             tela.exibePromocao(posProx);
-
                         }
                     }
                     control.alteraVez();
@@ -77,7 +76,7 @@ public class Movimentacao {
                 }
             } else if (peca == " P " && tabuleiro.retornaPeca(posAtual).getCor() == Cor.PRETO) {//PEAO Preto
 
-                if ((tabuleiro.retornaPeca(posAtual).podeCapturar(posAtual, posProx) == true) && (tabuleiro.retornaPeca(posProx) != null)) {
+                if ((tabuleiro.retornaPeca(posAtual).podeCapturar(posAtual, posProx) == true) && (tabuleiro.retornaPeca(posProx) != null) && ( tabuleiro.retornaPeca(posAtual).getCor() !=  tabuleiro.retornaPeca(posProx).getCor())) {
                     tabuleiro.trocaPeca(posAtual, posProx);
                     //verificaPromocaoparaPEAOpreto
                     if (posProx.charAt(1) == '1') {
@@ -112,7 +111,7 @@ public class Movimentacao {
                 }
             } else if (peca == " T ") {//TORRE
                 //movimenta
-                if ((tabuleiro.retornaPeca(posAtual).podeCapturar(posAtual, posProx) == true) && (tabuleiro.retornaPeca(posProx) != null)) {
+                if ((tabuleiro.retornaPeca(posAtual).podeCapturar(posAtual, posProx) == true) && (tabuleiro.retornaPeca(posProx) != null) && ( tabuleiro.retornaPeca(posAtual).getCor() !=  tabuleiro.retornaPeca(posProx).getCor())) {
                     tabuleiro.retornaPeca(posAtual).alteraMovimentado();
                     tabuleiro.trocaPeca(posAtual, posProx);
                     control.alteraVez();
@@ -127,7 +126,7 @@ public class Movimentacao {
                 }
             } else if (peca == " C ") {//CAVALO
                 //movimenta 
-                if ((tabuleiro.retornaPeca(posAtual).podeCapturar(posAtual, posProx) == true) && (tabuleiro.retornaPeca(posProx) != null)) {
+                if ((tabuleiro.retornaPeca(posAtual).podeCapturar(posAtual, posProx) == true) && (tabuleiro.retornaPeca(posProx) != null) && ( tabuleiro.retornaPeca(posAtual).getCor() !=  tabuleiro.retornaPeca(posProx).getCor())) {
                     tabuleiro.trocaPeca(posAtual, posProx);
                     control.alteraVez();
                     control.iniciaJogada();
@@ -140,9 +139,9 @@ public class Movimentacao {
                         tela.alertaMovInvalido();
                     }
                 }
-            } else if (peca == " B ") {//BISPO
+            } else if (peca == " B " ) {//BISPO
                 //Movimento
-                if ((tabuleiro.retornaPeca(posAtual).podeCapturar(posAtual, posProx) == true) && (tabuleiro.retornaPeca(posProx) != null)) {
+                if ((tabuleiro.retornaPeca(posAtual).podeCapturar(posAtual, posProx) == true) && (tabuleiro.retornaPeca(posProx) != null) && ( tabuleiro.retornaPeca(posAtual).getCor() !=  tabuleiro.retornaPeca(posProx).getCor())) {
                     tabuleiro.trocaPeca(posAtual, posProx);
                     control.alteraVez();
                     control.iniciaJogada();
@@ -156,7 +155,7 @@ public class Movimentacao {
                 }
             } else if (peca == " D ") {//DAMA
                 //movimenta
-                if ((tabuleiro.retornaPeca(posAtual).podeCapturar(posAtual, posProx) == true) && (tabuleiro.retornaPeca(posProx) != null)) {
+                if ((tabuleiro.retornaPeca(posAtual).podeCapturar(posAtual, posProx) == true) && (tabuleiro.retornaPeca(posProx) != null) && ( tabuleiro.retornaPeca(posAtual).getCor() !=  tabuleiro.retornaPeca(posProx).getCor())) {
                     tabuleiro.trocaPeca(posAtual, posProx);
                     control.alteraVez();
                     control.iniciaJogada();
@@ -170,7 +169,7 @@ public class Movimentacao {
                 }
             } else if (peca == " K ") {//REI
                 //movimenta 
-                if ((tabuleiro.retornaPeca(posAtual).podeCapturar(posAtual, posProx) == true) && (tabuleiro.retornaPeca(posProx) != null)) {
+                if ((tabuleiro.retornaPeca(posAtual).podeCapturar(posAtual, posProx) == true) && (tabuleiro.retornaPeca(posProx) != null) && ( tabuleiro.retornaPeca(posAtual).getCor() !=  tabuleiro.retornaPeca(posProx).getCor())) {
                     tabuleiro.retornaPeca(posAtual).alteraMovimentado();
                     tabuleiro.trocaPeca(posAtual, posProx);
 
