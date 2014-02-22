@@ -105,17 +105,5 @@ public class Jogador implements Serializable {
 
     }
 
-    public Set<String> imprimeJogador() {
-        return jogadores.keySet();
 
-    }
-
-    public void imprimeInformacoes(String nome) {
-        criaJogador(nome);
-        System.out.println(jogadores);
-    }
-
-    public void imprimiDados() {
-        System.out.println(jogadores);
-    }
 }

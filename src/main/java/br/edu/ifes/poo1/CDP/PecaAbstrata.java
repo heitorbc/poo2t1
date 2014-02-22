@@ -17,7 +17,7 @@ import java.io.Serializable;
 public abstract class PecaAbstrata implements Peca,Serializable{
     protected Cor cor;
     protected PecaNome nome;
-    public boolean movimentado;
+    private boolean movimentado;
 
     
     public PecaAbstrata(Cor cor, PecaNome nome) {
