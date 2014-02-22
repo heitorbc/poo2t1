@@ -5,7 +5,6 @@
  */
 package br.edu.ifes.poo1.CDP;
 
-import br.edu.ifes.poo1.CIH.Impressao;
 import java.io.Serializable;
 import java.util.ArrayList;
 /**
